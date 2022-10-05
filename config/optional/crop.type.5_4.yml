@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+label: '5:4'
+id: '5_4'
+description: ''
+aspect_ratio: '5:4'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

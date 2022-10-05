@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.3_1
+  module:
+    - crop
+name: 3_1_1800x600
+label: '3:1 1800x600'
+effects:
+  99625fe5-cb5f-4590-8ec9-cbdb8da22444:
+    uuid: 99625fe5-cb5f-4590-8ec9-cbdb8da22444
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: '3_1'
+      automatic_crop_provider: null
+  f654ff6b-2e77-41dd-a0d0-4dbe322fadd3:
+    uuid: f654ff6b-2e77-41dd-a0d0-4dbe322fadd3
+    id: image_scale
+    weight: 2
+    data:
+      width: 1800
+      height: 600
+      upscale: false

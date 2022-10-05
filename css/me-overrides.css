@@ -1,0 +1,211 @@
+:root {
+  --me-base-font-size: 1.6rem;
+  --me-font-family-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --me-font-weight-medium: 500;
+  --me-letter-spacing-loose: .1em;
+  --me-color-text: #2c2a29;
+  --me-color-text-reversed: #fff;
+  --me-color-button: #e1e0e1;
+  --me-color-button-hover: #9d999d;
+  --me-color-button-cancel: #e1e0e1;
+  --me-color-button-cancel-hover: #9d999d;
+  --me-color-button-save: #ceb888;
+  --me-color-button-save-hover: #dacaa6;
+  --me-color-borders: #c3c1c3;
+  --me-color-borders-focus: #777277 --me-color-draggable-focus: #fff;
+  --me-color-container-background: #f7f6f7;
+  --me-transition: .15s ease-in-out;
+}
+
+.js .js-hide {
+  display: none !important;
+}
+
+[class^="layout-paragraphs-builder-form"] button:after,
+button[class*="lpb-btn"]:after {
+  content: none;
+}
+
+a[class^="lpb-"] {
+  background-size: cover !important;
+  background-repeat: none !important;
+}
+
+.lpb-layout {
+  margin: 0;
+  padding: 0;
+}
+
+.js-lpb-region {
+  min-height: 40px !important;
+}
+
+.lp-builder .lpb-btn {
+  background-image: none;
+}
+
+.lpb-form__actions {
+  gap: 1em;
+}
+
+a.lpb-enable-button,
+a.lpb-enable-button:focus,
+a.lpb-enable-button:hover {
+  background-image: none;
+}
+
+form.layout-paragraphs-builder-form .js-lpb-component-list {
+  padding: 0;
+}
+
+.lpb-drag {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 11C13.3284 11 14 10.3284 14 9.5C14 8.67157 13.3284 8 12.5 8C11.6716 8 11 8.67157 11 9.5C11 10.3284 11.6716 11 12.5 11Z' fill='%23000000'/%3E%3Cpath d='M12.5 16C13.3284 16 14 15.3284 14 14.5C14 13.6716 13.3284 13 12.5 13C11.6716 13 11 13.6716 11 14.5C11 15.3284 11.6716 16 12.5 16Z' fill='%23000000'/%3E%3Cpath d='M14 19.5C14 20.3284 13.3284 21 12.5 21C11.6716 21 11 20.3284 11 19.5C11 18.6716 11.6716 18 12.5 18C13.3284 18 14 18.6716 14 19.5Z' fill='%23000000'/%3E%3Cpath d='M17.5 11C18.3284 11 19 10.3284 19 9.5C19 8.67157 18.3284 8 17.5 8C16.6716 8 16 8.67157 16 9.5C16 10.3284 16.6716 11 17.5 11Z' fill='%23000000'/%3E%3Cpath d='M19 14.5C19 15.3284 18.3284 16 17.5 16C16.6716 16 16 15.3284 16 14.5C16 13.6716 16.6716 13 17.5 13C18.3284 13 19 13.6716 19 14.5Z' fill='%23000000'/%3E%3Cpath d='M17.5 21C18.3284 21 19 20.3284 19 19.5C19 18.6716 18.3284 18 17.5 18C16.6716 18 16 18.6716 16 19.5C16 20.3284 16.6716 21 17.5 21Z' fill='%23000000'/%3E%3C/svg%3E%0A") !important;
+  background-size: cover;
+  cursor: grab;
+}
+.is-layout .lpb-drag {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 11C13.3284 11 14 10.3284 14 9.5C14 8.67157 13.3284 8 12.5 8C11.6716 8 11 8.67157 11 9.5C11 10.3284 11.6716 11 12.5 11Z' fill='white'/%3E%3Cpath d='M12.5 16C13.3284 16 14 15.3284 14 14.5C14 13.6716 13.3284 13 12.5 13C11.6716 13 11 13.6716 11 14.5C11 15.3284 11.6716 16 12.5 16Z' fill='white'/%3E%3Cpath d='M14 19.5C14 20.3284 13.3284 21 12.5 21C11.6716 21 11 20.3284 11 19.5C11 18.6716 11.6716 18 12.5 18C13.3284 18 14 18.6716 14 19.5Z' fill='white'/%3E%3Cpath d='M17.5 11C18.3284 11 19 10.3284 19 9.5C19 8.67157 18.3284 8 17.5 8C16.6716 8 16 8.67157 16 9.5C16 10.3284 16.6716 11 17.5 11Z' fill='white'/%3E%3Cpath d='M19 14.5C19 15.3284 18.3284 16 17.5 16C16.6716 16 16 15.3284 16 14.5C16 13.6716 16.6716 13 17.5 13C18.3284 13 19 13.6716 19 14.5Z' fill='white'/%3E%3Cpath d='M17.5 21C18.3284 21 19 20.3284 19 19.5C19 18.6716 18.3284 18 17.5 18C16.6716 18 16 18.6716 16 19.5C16 20.3284 16.6716 21 17.5 21Z' fill='white'/%3E%3C/svg%3E%0A") !important;
+}
+.lpb-up {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 18L15 12L21 18H9Z' fill='%23000000'/%3E%3C/svg%3E%0A") !important;
+}
+.is-layout .lpb-up {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 18L15 12L21 18H9Z' fill='white'/%3E%3C/svg%3E%0A") !important;
+}
+.lpb-down {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M21 12L15 18L9 12L21 12Z' fill='%23000000'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='12' height='6' fill='white' transform='translate(21 18) rotate(-180)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A") !important;
+}
+.is-layout .lpb-down {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M21 12L15 18L9 12L21 12Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='12' height='6' fill='white' transform='translate(21 18) rotate(-180)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A") !important;
+}
+.lpb-edit {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.284 8.63082L19.6136 7.30121C20.0152 6.8996 20.6664 6.8996 21.068 7.30121L22.6988 8.93203C23.1004 9.33365 23.1004 9.98479 22.6988 10.3864L21.3692 11.716L18.284 8.63082Z' fill='%23000000'/%3E%3Cpath d='M17.2556 9.65922L9.0284 17.8864L8 22L12.1136 20.9716L20.3408 12.7444L17.2556 9.65922Z' fill='%23000000'/%3E%3C/svg%3E%0A") !important;
+}
+.is-layout .lpb-edit {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.284 8.63082L19.6136 7.30121C20.0152 6.8996 20.6664 6.8996 21.068 7.30121L22.6988 8.93203C23.1004 9.33365 23.1004 9.98479 22.6988 10.3864L21.3692 11.716L18.284 8.63082Z' fill='white'/%3E%3Cpath d='M17.2556 9.65922L9.0284 17.8864L8 22L12.1136 20.9716L20.3408 12.7444L17.2556 9.65922Z' fill='white'/%3E%3C/svg%3E%0A") !important;
+}
+.lpb-duplicate {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.7,8C21.4,8,22,8.6,22,9.3v7.9c0,0.7-0.6,1.3-1.3,1.3h-7.9c-0.7,0-1.3-0.6-1.3-1.3V9.3c0-0.7,0.6-1.3,1.3-1.3H20.7 M12.8,19.4c-1.2,0-2.2-1-2.2-2.2v-5.7H9.3c-0.7,0-1.3,0.6-1.3,1.3v7.9C8,21.4,8.6,22,9.3,22h7.9c0.7,0,1.3-0.6,1.3-1.3v-1.3H12.8z' fill='black' /%3E%3C/svg%3E%0A") !important;
+}
+.is-layout .lpb-duplicate {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.7,8C21.4,8,22,8.6,22,9.3v7.9c0,0.7-0.6,1.3-1.3,1.3h-7.9c-0.7,0-1.3-0.6-1.3-1.3V9.3c0-0.7,0.6-1.3,1.3-1.3H20.7 M12.8,19.4c-1.2,0-2.2-1-2.2-2.2v-5.7H9.3c-0.7,0-1.3,0.6-1.3,1.3v7.9C8,21.4,8.6,22,9.3,22h7.9c0.7,0,1.3-0.6,1.3-1.3v-1.3H12.8z' fill='white' /%3E%3C/svg%3E%0A") !important;
+}
+.lpb-delete {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14 8H16C16.5523 8 17 8.44772 17 9H21V11H9V9H13C13 8.44772 13.4477 8 14 8ZM10 12H20L19.09 21.0995C19.0389 21.6107 18.6088 22 18.095 22H11.905C11.3912 22 10.9611 21.6107 10.91 21.0995L10 12Z' fill='%23000000'/%3E%3C/svg%3E%0A") !important;
+}
+.is-layout .lpb-delete {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14 8H16C16.5523 8 17 8.44772 17 9H21V11H9V9H13C13 8.44772 13.4477 8 14 8ZM10 12H20L19.09 21.0995C19.0389 21.6107 18.6088 22 18.095 22H11.905C11.3912 22 10.9611 21.6107 10.91 21.0995L10 12Z' fill='white'/%3E%3C/svg%3E%0A") !important;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  background-image: url("data:image/svg+xml,%3csvg width='16' height='16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.344 2.343l11.313 11.313M2.344 13.657L13.657 2.343' stroke='%2355565B' stroke-width='3'/%3e%3c/svg%3e");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.lpb-dialog.ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
+  background-image: none;
+}
+
+.ui-dialog .ui-dialog-content .layout-paragraphs-component-form select {
+  appearance: none;
+}
+
+.ui-dialog .btn:after,
+.lpb-dialog .btn:after {
+  content: none;
+}
+
+.ui-dialog .form--inline {
+  display: flex;
+  align-items: flex-end;
+  gap: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.ui-dialog .form--inline:before {
+  content: none;
+}
+
+.ui-dialog .form--inline > * {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .ui-dialog .form-inline .form-control {
+    display: block;
+    width: auto;
+  }
+}
+
+.lpb-dialog .layout-select__item {
+  margin: 1em !important;
+}
+
+.lpb-dialog .horizontal-tab-radios label.option,
+.lpb-dialog .layout-select__item label.option {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.lpb-dialog .horizontal-tab-radios input[type="radio"],
+.lpb-dialog .layout-select__item input[type="radio"] {
+  appearance: none;
+  display: block !important;
+  position: absolute !important;
+  background-color: transparent;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  clip: initial;
+  height: auto;
+  width: auto;
+}
+
+.lpb-dialog .horizontal-tab-radios input[type="radio"] {
+  border-radius: .125em .125em 0 0;
+}
+
+.lpb-dialog .horizontal-tab-radios input[type="radio"]:checked {
+  background-color: white;
+}
+
+.lpb-dialog .layout-select__item input[type="radio"]:checked {
+  background-color: #f5f5f5;
+  border: 2px solid rgb(0, 95, 204);
+}
+
+.lpb-dialog .field_image-media-library-wrapper--description {
+  margin-bottom: 1em;
+}
+
+.lpb-dialog .js-media-library-item {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 1em;
+}
+
+.lpb-dialog .js-media-library-item-preview + * {
+  margin-top: 1em;
+}
+
+.lpb-enable__wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.me-is-editable {
+  min-height: 3em;
+}
+
+/** Remove the required bg image from seven as it conflicts with Strata */
+.form-required:after {
+  background-image: none !important;
+}

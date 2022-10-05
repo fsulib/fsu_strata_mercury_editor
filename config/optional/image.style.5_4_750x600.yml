@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.5_4
+  module:
+    - crop
+name: 5_4_750x600
+label: '5:4 750x600'
+effects:
+  777e3c25-69a1-4bd5-90d6-c41c3a9fb5d7:
+    uuid: 777e3c25-69a1-4bd5-90d6-c41c3a9fb5d7
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: '5_4'
+      automatic_crop_provider: null
+  10c97c6a-2f46-4a37-a70a-0261d4a60f3d:
+    uuid: 10c97c6a-2f46-4a37-a70a-0261d4a60f3d
+    id: image_scale
+    weight: 2
+    data:
+      width: 750
+      height: 600
+      upscale: false

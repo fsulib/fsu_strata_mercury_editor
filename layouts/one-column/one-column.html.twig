@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a one-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = []
+%}
+
+{%
+  set region_classes = []
+%}
+
+{% if content %}
+  <section {{ attributes.addClass(classes) }}>
+    <div class="row">
+      {% if content.primary %}
+        <div {{ region_attributes.primary.addClass(region_classes).addClass('col-xs-12') }}>
+          {{ content.primary }}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}

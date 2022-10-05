@@ -1,0 +1,11 @@
+# Mercury Editor overrides for fsu_strata.
+mercury_editor:
+  css:
+    theme:
+      css/me-overrides.css: {}
+  dependencies:
+    - core/drupalSettings
+image:
+  css:
+    theme:
+      css/image.css: {}

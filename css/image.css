@@ -1,0 +1,14 @@
+.text-center img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-left img {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.text-right img {
+  margin-left: auto;
+  margin-right: 0;
+}

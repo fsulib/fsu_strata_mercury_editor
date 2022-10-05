@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.1_1
+  module:
+    - crop
+name: 1_1_180x180
+label: '1:1 180x180'
+effects:
+  b055321d-2add-426f-b55b-69238ca728a1:
+    uuid: b055321d-2add-426f-b55b-69238ca728a1
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: '1_1'
+      automatic_crop_provider: null
+  a35b9b77-0f49-420c-af3a-4eb2020ba388:
+    uuid: a35b9b77-0f49-420c-af3a-4eb2020ba388
+    id: image_scale
+    weight: 3
+    data:
+      width: 180
+      height: 180
+      upscale: false

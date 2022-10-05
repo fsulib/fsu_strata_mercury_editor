@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.enhanced_page.field_content
+    - field.field.node.enhanced_page.field_summary
+    - node.type.enhanced_page
+  module:
+    - text
+    - user
+id: node.enhanced_page.teaser
+targetEntityType: node
+bundle: enhanced_page
+mode: teaser
+content:
+  field_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_content: true
+  links: true

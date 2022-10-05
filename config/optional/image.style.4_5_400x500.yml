@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.4_5
+  module:
+    - crop
+name: 4_5_400x500
+label: '4:5 400x500'
+effects:
+  6bc59a7f-d0a2-4cfb-92ce-e397af2e66cd:
+    uuid: 6bc59a7f-d0a2-4cfb-92ce-e397af2e66cd
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: '4_5'
+      automatic_crop_provider: null
+  66bcc14f-bf42-4c5a-b8e8-70f2a48d463e:
+    uuid: 66bcc14f-bf42-4c5a-b8e8-70f2a48d463e
+    id: image_scale
+    weight: 2
+    data:
+      width: 400
+      height: 500
+      upscale: false

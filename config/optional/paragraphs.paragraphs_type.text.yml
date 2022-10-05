@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - style_options
+id: text
+label: Text
+icon_uuid: null
+icon_default: null
+description: 'A simple text component'
+behavior_plugins:
+  style_options:
+    enabled: true

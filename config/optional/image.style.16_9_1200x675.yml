@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.16_9
+  module:
+    - crop
+name: 16_9_1200x675
+label: '16:9 1200x675'
+effects:
+  3169a755-37d4-4312-952b-204de772b171:
+    uuid: 3169a755-37d4-4312-952b-204de772b171
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: '16_9'
+      automatic_crop_provider: null
+  f38455fe-0943-4b08-b51c-b0a83ec5b86e:
+    uuid: f38455fe-0943-4b08-b51c-b0a83ec5b86e
+    id: image_scale
+    weight: 2
+    data:
+      width: 1200
+      height: 675
+      upscale: false

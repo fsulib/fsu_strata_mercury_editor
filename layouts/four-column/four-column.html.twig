@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a four-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = []
+%}
+
+{%
+  set region_classes = []
+%}
+
+{% if content %}
+  <section {{ attributes.addClass(classes) }}>
+    <div class="row">
+      {% if content.primary %}
+        <div {{ region_attributes.primary.addClass(region_classes).addClass('col-xs-12 col-sm-3') }}>
+          {{ content.primary }}
+        </div>
+      {% endif %}
+      {% if content.secondary %}
+        <div {{ region_attributes.secondary.addClass(region_classes).addClass('col-xs-12 col-sm-3') }}>
+          {{ content.secondary }}
+        </div>
+      {% endif %}
+      {% if content.tertiary %}
+        <div {{ region_attributes.tertiary.addClass(region_classes).addClass('col-xs-12 col-sm-3') }}>
+          {{ content.tertiary }}
+        </div>
+      {% endif %}
+      {% if content.quaternary %}
+        <div {{ region_attributes.quaternary.addClass(region_classes).addClass('col-xs-12 col-sm-3') }}>
+          {{ content.quaternary }}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}

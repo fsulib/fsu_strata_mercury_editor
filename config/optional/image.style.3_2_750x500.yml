@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.3_2
+  module:
+    - crop
+name: 3_2_750x500
+label: '3:2 750x500'
+effects:
+  386f0c4b-93ef-4055-b130-1849db26bb5d:
+    uuid: 386f0c4b-93ef-4055-b130-1849db26bb5d
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: '3_2'
+      automatic_crop_provider: null
+  ec0bf214-a8fd-49e1-90a9-2ad683261daf:
+    uuid: ec0bf214-a8fd-49e1-90a9-2ad683261daf
+    id: image_scale
+    weight: 2
+    data:
+      width: 750
+      height: 500
+      upscale: false

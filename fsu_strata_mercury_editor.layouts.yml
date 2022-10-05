@@ -1,0 +1,68 @@
+one_column:
+  label: '1 Column'
+  path: layouts/one-column
+  template: one-column
+  category: 'Strata'
+  library: fsu_strata/global-styling
+  class: '\Drupal\style_options\Plugin\Layout\StyleOptionLayoutPlugin'
+  default_region: primary
+  weight: 1
+  icon_map:
+    - [primary]
+  regions:
+    primary:
+      label: Primary
+two_column:
+  label: '2 Column'
+  path: layouts/two-column
+  template: two-column
+  category: 'Strata'
+  library: fsu_strata/global-styling
+  class: '\Drupal\style_options\Plugin\Layout\StyleOptionLayoutPlugin'
+  default_region: primary
+  weight: 2
+  icon_map:
+    - [primary, secondary]
+  regions:
+    primary:
+      label: Primary
+    secondary:
+      label: Secondary
+three_column:
+  label: '3 Column'
+  path: layouts/three-column
+  template: three-column
+  category: 'Strata'
+  library: fsu_strata/global-styling
+  class: '\Drupal\style_options\Plugin\Layout\StyleOptionLayoutPlugin'
+  default_region: primary
+  weight: 3
+  icon_map:
+    - [primary, secondary, tertiary]
+  regions:
+    primary:
+      label: Primary
+    secondary:
+      label: Secondary
+    tertiary:
+      label: Tertiary
+four_column:
+  label: '4 Column'
+  path: layouts/four-column
+  template: four-column
+  category: 'Strata'
+  library: fsu_strata/global-styling
+  class: '\Drupal\style_options\Plugin\Layout\StyleOptionLayoutPlugin'
+  default_region: primary
+  weight: 4
+  icon_map:
+    - [primary, secondary, tertiary, quaternary]
+  regions:
+    primary:
+      label: Primary
+    secondary:
+      label: Secondary
+    tertiary:
+      label: Tertiary
+    quaternary:
+      label: Quaternary

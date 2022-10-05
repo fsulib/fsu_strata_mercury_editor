@@ -1,0 +1,201 @@
+options:
+  alignment:
+    plugin: css_class
+    label: Align
+    multiple: false
+    options:
+      none:
+        label: None
+      left:
+        label: Left
+        class: align-left
+      center:
+        label: Center
+        class: align-center
+      right:
+        label: Right
+        class: align-right
+  card_style:
+    plugin: property
+    label: Style
+    default: none
+    options:
+      none: None
+      arrow: Arrow
+      point: Point
+      rules: Rules
+  card_layout:
+    plugin: property
+    label: Layout
+    default: stacked
+    options:
+      stacked: Stacked
+      inline: Inline
+  custom_class:
+    plugin: css_class
+    label: Custom CSS Class
+  color:
+    plugin: css_class
+    label: Color
+    multiple: false
+    default: transparent
+    options:
+      transparent:
+        label: Transparent
+        class: s3-trans
+      c:
+        label: 'Canvas (C)'
+        class: s3-c
+      w:
+        label: 'White (W)'
+        class: s3-w
+      n2w:
+        label: 'Neutral +2 White (N2W)'
+        class: s3-n2w
+      n1w:
+        label: 'Neutral +1 White (N1W)'
+        class: s3-n1w
+      n:
+        label: 'Neutral (N)'
+        class: s3-n
+      n2s:
+        label: 'Neutral +2 Slate (N2S)'
+        class: s3-n2s
+      s:
+        label: 'Slate (S)'
+        class: s3-s
+      k:
+        label: 'Black (K)'
+        class: s3-k
+      gt:
+        label: 'Garnet (GT)'
+        class: s3-gt
+      gd:
+        label: 'Gold (GD)'
+        class: s3-gd
+      gd1c:
+        label: 'Gold +1 Canvas (GD1C)'
+        class: s3-gd1c
+      gd2c:
+        label: 'Gold +2 Canvas (GD2C)'
+        class: s3-gd2c
+      gd3c:
+        label: 'Gold +3 Canvas (GD3C)'
+        class: s3-gd3c
+  # For cases where the color affects more than the class added to the attributes array.
+  color_property:
+    plugin: property
+    label: Color
+    multiple: false
+    default: transparent
+    options:
+      transparent: Transparent
+      c: 'Canvas (C)'
+      w: 'White (W)'
+      n2w: 'Neutral +2 White (N2W)'
+      n1w: 'Neutral +1 White (N1W)'
+      n: 'Neutral (N)'
+      n2s: 'Neutral +2 Slate (N2S)'
+      s: 'Slate (S)'
+      k: 'Black (K)'
+      gt: 'Garnet (GT)'
+      gd: 'Gold (GD)'
+      gd1c: 'Gold +1 Canvas (GD1C)'
+      gd2c: 'Gold +2 Canvas (GD2C)'
+      gd3c: 'Gold +3 Canvas (GD3C)'
+  hero_alignment:
+    plugin: property
+    label: Align
+    default: left
+    options:
+      left: Left
+      right: Right
+  hero_style:
+    plugin: property
+    label: Style
+    default: none
+    options:
+      none: None
+      arrow: Arrow
+      point: Point
+  image_style:
+    plugin: image_style
+    label: Image Style
+    source: field_image.field_media_image
+    default: max_400x400
+    options:
+      - 1_1_180x180
+      - 3_1_1800x600
+      - 3_2_750x500
+      - 4_5_400x500
+      - 5_4_750x600
+      - 16_9_1200x675
+      - max_400x400
+      - max_1200x1200
+  text_alignment:
+    plugin: css_class
+    label: Align
+    multiple: false
+    options:
+      none:
+        label: None
+      left:
+        label: Left
+        class: text-left
+      center:
+        label: Center
+        class: text-center
+      right:
+        label: Right
+        class: text-right
+  two_col_ratio:
+    plugin: property
+    label: Column Ratio
+    default: 1_1
+    options:
+      '1_1': '1:1'
+      '1_2': '1:2'
+      '2_1': '2:1'
+
+contexts:
+  layout:
+    _defaults:
+      options:
+        color:
+          layout: true
+          regions: true
+        custom_class:
+          layout: true
+          regions: true
+    two_column:
+      options:
+        two_col_ratio:
+          layout: true
+          regions: false
+  paragraphs:
+    _defaults:
+      options:
+        custom_class: true
+    image:
+      options:
+        alignment: true
+        image_style: true
+        color: true
+    text:
+      options:
+        text_alignment: true
+        color: true
+    card:
+      options:
+        color_property: true
+        card_layout: true
+        card_style: true
+        text_alignment: true
+        custom_class: true
+        image_style: true
+    hero:
+      options:
+        color_property: true
+        hero_alignment: true
+        hero_style: true
+        custom_class: true

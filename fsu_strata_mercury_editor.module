@@ -1,0 +1,194 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Strata Page module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+use Drupal\user\Entity\Role;
+
+/**
+ * Implements hook_install().
+ */
+function fsu_strata_mercury_editor_install() {
+  // Grant layout paragraphs permissions to the appropriate roles.
+  $content_editor_role = Role::load('content_editor');
+  $power_user_role = Role::load('power_user');
+
+  if (empty($content_editor_role) || empty($power_user_role)) {
+    return;
+  }
+
+  $content_editor_permissions = [
+    'view unpublished paragraphs',
+    'create image media',
+    'edit own image media',
+    'create enhanced_page content',
+    'edit own enhanced_page content',
+    'delete own enhanced_page content',
+    'view own unpublished content',
+  ];
+
+  $power_user_permissions = [
+    'edit any image media',
+    'administer media',
+    'update media',
+    'view all media revisions',
+    'edit any enhanced_page content',
+    'delete any enhanced_page content'
+  ];
+
+  foreach ($content_editor_permissions as $index => $permission) {
+    $content_editor_role->grantPermission($permission);
+    $power_user_role->grantPermission($permission);
+  }
+
+  foreach ($power_user_permissions as $index => $permission) {
+    $power_user_role->grantPermission($permission);
+  }
+
+  $content_editor_role->save();
+  $power_user_role->save();
+}
+
+/**
+ * Implements hook_theme().
+ */
+function fsu_strata_mercury_editor_theme() {
+  $theme_hooks = [];
+
+  // To include custom paragraph templates in this module,
+  // add paragraph types to this array and create a new template
+  // following the naming convention "paragraph--{type}.html.twig"
+  // in the fsu_strata_mercury_editor/templates folder.
+  // @see fsu_strata_mercury_editor/templates/paragraph--hero.html.twig
+  $custom_paragraph_templates = [
+    'image',
+    // 'section',
+    // 'text',
+    'hero',
+    'card',
+  ];
+
+  foreach ($custom_paragraph_templates as $type) {
+    $theme_hooks['paragraph__' . $type] = [
+      'base hook' => 'paragraph',
+    ];
+  }
+
+  return $theme_hooks;
+}
+
+/**
+ * Implenents hook_form_FORM_ID_alter().
+ */
+function fsu_strata_mercury_editor_preprocess_layout_paragraphs_builder(&$variables) {
+  $variables['#attached']['library'][] = 'fsu_strata_mercury_editor/mercury_editor';
+}
+
+/**
+ * Implements hook_library_info_alter
+ *
+ * @param $libraries
+ * @param $extension
+ */
+function fsu_strata_mercury_editor_library_info_alter(&$libraries, $extension) {
+  // This function was copied over from fsu_strata theme.
+  // We only want to run it in cases where that theme is not active.
+  $current_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+  if ($current_theme === 'fsu_strata') {
+    return;
+  }
+
+  // Update strata version.
+  if ($extension == 'fsu_strata') {
+    // Get version of style
+    $strataversion = theme_get_setting('strataversion', 'fsu_strata');
+    if (empty($strataversion)) {
+      // Set default version.
+      $strataversion = '3.1';
+    }
+
+    $themePath = \Drupal::service('theme_handler')->getTheme('fsu_strata')->getPath();
+
+    // Change css.
+    if (isset($libraries['global-styling']) &&
+      isset($libraries['global-styling']['css']['theme'])) {
+      foreach ($libraries['global-styling']['css']['theme'] as $key => $css) {
+        if (strpos($key, '{strataversion}')) {
+          $_key = str_replace('{strataversion}', $strataversion, $key);
+          if (file_exists($themePath . '/' . $_key)) {
+            $libraries['global-styling']['css']['theme'][$_key] = $css;
+          }
+          unset($libraries['global-styling']['css']['theme'][$key]);
+        }
+      }
+    }
+    // Change js.
+    if (isset($libraries['theme']) && isset($libraries['theme']['js'])) {
+      foreach ($libraries['theme']['js'] as $jskey => $js) {
+        if (strpos($jskey, '{strataversion}')) {
+          $_jskey = str_replace('{strataversion}', $strataversion, $jskey);
+          if (file_exists($themePath . '/' . $_jskey)) {
+            $libraries['theme']['js'][$_jskey] = $js;
+          }
+          unset($libraries['theme']['js'][$jskey]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_HOOK
+ */
+function template_preprocess_paragraph__hero(array &$variables) {
+  $paragraph = $variables['paragraph'];
+  if ($paragraph->hasField('field_heading') && !$paragraph->field_heading->isEmpty()) {
+    $variables['heading'] = [
+      'text' => $paragraph->field_heading->first()->text,
+      'tag' => $paragraph->field_heading->first()->size,
+    ];
+  }
+
+  if ($paragraph->hasField('field_image') && !$paragraph->field_image->isEmpty()) {
+    $src = \Drupal::service('fsu_strata_mercury.image_path')->getMediaImageStylePath($paragraph->field_image->entity, 'max_1200x1200');
+    $variables['attributes']['style'][] = "background-image: url({$src});";
+  }
+}
+
+/**
+ * Implements template_preprocess_HOOK
+ */
+function template_preprocess_paragraph__card(array &$variables) {
+  $paragraph = $variables['paragraph'];
+  if ($paragraph->hasField('field_heading') && !$paragraph->field_heading->isEmpty()) {
+    $variables['heading'] = [
+      'text' => $paragraph->field_heading->first()->text,
+      'tag' => $paragraph->field_heading->first()->size,
+    ];
+    if (!$paragraph->field_link->isEmpty()) {
+      $variables['heading']['href'] = $paragraph->field_link->first()->getUrl()->toString();
+    }
+  }
+}
+
+/**
+ * Implements HOOK_preprocess_layout_paragraphs_builder_formatter
+ */
+function fsu_strata_mercury_editor_preprocess_layout_paragraphs_builder_formatter(array &$variables) {
+  $variables['#attached']['library'][] = 'fsu_strata_mercury_editor/mercury_editor';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function fsu_strata_mercury_editor_theme_suggestions_form_element_label_alter(&$suggestions, $variables) {
+  if (isset($variables['element']['#theme']) && $variables['element']['#theme'] === "layout_paragraphs_builder_formatter") {
+    $suggestions[] = 'form_element_label__default';
+  }
+}

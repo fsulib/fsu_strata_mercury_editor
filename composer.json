@@ -1,8 +1,8 @@
 {
-  "name": "atendesigngroup/fsu_strata_mercury_editor",
+  "name": "fsulib/fsu_strata_mercury_editor",
   "description": "Provides an Enhanced Page with Strata layouts and components.",
   "type": "drupal-module",
-  "homepage": "https://bitbucket.org/atendesigngroup/fsu_strata_mercury_editor",
+  "homepage": "https://github.com/fsulib/fsu_strata_mercury_editor",
   "keywords": ["Drupal", "Mercury Editor"],
   "license": "GPL-2.0+",
   "minimum-stability": "dev",

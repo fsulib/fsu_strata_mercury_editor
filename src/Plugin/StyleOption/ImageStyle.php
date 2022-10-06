@@ -112,6 +112,7 @@ class ImageStyle extends StyleOptionPluginBase {
       '#uri' => $uri,
       '#width' => $properties['width'],
       '#height' => $properties['height'],
+      '#alt' => $properties['alt'],
     ];
     return $build;
   }

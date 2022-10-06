@@ -63,7 +63,7 @@
       {% if heading %}
         <{{heading.tag}}>
         {% if heading.href %}
-        <a href="{{href}}">{{heading.text}}</a>
+        <a href="{{heading.href}}">{{heading.text}}</a>
         {% else %}
         {{heading.text}}
         {% endif %}
@@ -77,7 +77,7 @@
       {% if heading %}
         <{{heading.tag}}>
         {% if heading.href %}
-        <a href="{{href}}">{{heading.text}}</a>
+        <a href="{{heading.href}}">{{heading.text}}</a>
         {% else %}
         {{heading.text}}
         {% endif %}

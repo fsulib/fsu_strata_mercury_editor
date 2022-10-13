@@ -15,8 +15,9 @@ Add the following repos to your list of repositories in `composer.json`
         "url": "https://bitbucket.org/atendesigngroup/mercury_editor.git"
     },
     {
-        "type": "git",
-        "url": "https://bitbucket.org/atendesigngroup/fsu_strata_mercury_editor.git"
+        "name": "fsulib/fsu_strata_mercury_editor",
+        "type": "vcs",
+        "url": "git@github.com:fsulib/fsu_strata_mercury_editor.git"
     }
 ],
 ```
@@ -32,7 +33,7 @@ Add the following to the list of patches in `composer.json`. Note: This won't be
 
 Then run the following composer command.
 ```
-composer require atendesigngroup/fsu_strata_mercury_editor:dev-main --with-all-dependencies
+composer require fsulib/fsu_strata_mercury_editor:dev-master --with-all-dependencies
 ```
 
 Then install the module as normal.

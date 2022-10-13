@@ -21,7 +21,7 @@
     }
   ],
   "require": {
-    "atendesigngroup/mercury_editor": "dev-release/1.0.0 as dev-master",
+    "atendesigngroup/mercury_editor": "^1",
     "drupal/heading": "^1",
     "drupal/image_widget_crop": "^2",
     "drupal/layout_paragraphs": "^2",

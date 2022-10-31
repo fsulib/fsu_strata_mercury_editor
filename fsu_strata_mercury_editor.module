@@ -39,7 +39,8 @@ function fsu_strata_mercury_editor_install() {
     'update media',
     'view all media revisions',
     'edit any enhanced_page content',
-    'delete any enhanced_page content'
+    'delete any enhanced_page content',
+    'edit behavior plugin settings',
   ];
 
   foreach ($content_editor_permissions as $index => $permission) {

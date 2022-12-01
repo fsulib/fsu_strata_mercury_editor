@@ -12,3 +12,8 @@
   margin-left: auto;
   margin-right: 0;
 }
+
+.align-center img {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -45,6 +45,13 @@ options:
   custom_class:
     plugin: css_class
     label: Custom CSS Class
+  image_float:
+    plugin: property
+    label: Image Float
+    default: left
+    options:
+      left: 'Float Left'
+      right: 'Float Right'
   color:
     plugin: css_class
     label: Color
@@ -200,6 +207,7 @@ contexts:
       options:
         text_alignment: true
         color: true
+        image_float: true
     card:
       options:
         box_shadow: true

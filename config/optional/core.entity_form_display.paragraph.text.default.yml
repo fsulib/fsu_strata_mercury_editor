@@ -2,15 +2,26 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text.field_image
     - field.field.paragraph.text.field_text
     - paragraphs.paragraphs_type.text
   module:
+    - media_library
     - text
+_core:
+  default_config_hash: V2bRCWt5jbciY9edKtgB7ngTa1xgK1ATuGSfrpgll28
 id: paragraph.text.default
 targetEntityType: paragraph
 bundle: text
 mode: default
 content:
+  field_image:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_text:
     type: text_textarea
     weight: 0

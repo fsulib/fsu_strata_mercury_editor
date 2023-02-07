@@ -70,7 +70,7 @@ function fsu_strata_mercury_editor_theme() {
   $custom_paragraph_templates = [
     'image',
     // 'section',
-    // 'text',
+    'text',
     'hero',
     'card',
   ];

@@ -54,13 +54,14 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
+      {{ breakpoint() }}
     <div class="s3-{{color}} clearfix {{layout == 'inline' ? 'row'}}">
     {% if layout == 'inline' %}
     <div class="col-xs-12 col-sm-4">
       {{ content.image_style }}
     </div>
     <div class="col-xs-12 col-sm-8">
-      {% if heading %}
+      {% if heading.text %}
         <{{heading.tag}}>
         {% if heading.href %}
         <a href="{{heading.href}}">{{heading.text}}</a>
@@ -74,7 +75,7 @@
     {% else %}
     <div class="s3-p-10 s3-{{color}} feature-fixed">
       {{ content.image_style }}
-      {% if heading %}
+      {% if heading.text %}
         <{{heading.tag}}>
         {% if heading.href %}
         <a href="{{heading.href}}">{{heading.text}}</a>

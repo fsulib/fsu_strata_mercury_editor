@@ -54,7 +54,6 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ breakpoint() }}
     <div class="s3-{{color}} clearfix {{layout == 'inline' ? 'row'}}">
     {% if layout == 'inline' %}
     <div class="col-xs-12 col-sm-4">

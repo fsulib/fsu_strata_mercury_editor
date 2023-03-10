@@ -208,6 +208,7 @@ contexts:
         text_alignment: true
         color: true
         image_float: true
+        image_style: true
     card:
       options:
         box_shadow: true

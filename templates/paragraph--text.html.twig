@@ -48,12 +48,13 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
+{{ attach_library('fsu_strata_mercury_editor/image')}}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
     {% if attribute(content.field_image, '#field_name') == 'field_image' %}
-      <div class="s3-{{image_float}}">
-      {{ content.field_image }}
+      <div class="s3-override-{{image_float}}">
+		{{ content.image_style }}
       </div>
     {% endif %}
       {{ content.field_text }}

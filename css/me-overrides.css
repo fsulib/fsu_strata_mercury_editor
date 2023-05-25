@@ -12,7 +12,8 @@
   --me-color-button-save: #ceb888;
   --me-color-button-save-hover: #dacaa6;
   --me-color-borders: #c3c1c3;
-  --me-color-borders-focus: #777277 --me-color-draggable-focus: #fff;
+  --me-color-borders-focus: #777277;
+  --me-color-draggable-focus: #fff;
   --me-color-container-background: #f7f6f7;
   --me-transition: .15s ease-in-out;
 }
@@ -28,7 +29,7 @@ button[class*="lpb-btn"]:after {
 
 a[class^="lpb-"] {
   background-size: cover !important;
-  background-repeat: none !important;
+  background-repeat: no-repeat !important;
 }
 
 .lpb-layout {
@@ -37,11 +38,17 @@ a[class^="lpb-"] {
 }
 
 .js-lpb-region {
-  min-height: 40px !important;
+  min-height: 80px !important;
+}
+
+.lpb-controls {
+  border-radius: 0 6px 6px 0;
+  top: 10px;
 }
 
 .lp-builder .lpb-btn {
   background-image: none;
+  z-index: 80;
 }
 
 .lpb-form__actions {

@@ -9,3 +9,7 @@ image:
   css:
     theme:
       css/image.css: {}
+video:
+  css:
+    theme:
+      css/video.css: {}

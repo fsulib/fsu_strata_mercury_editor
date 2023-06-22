@@ -73,6 +73,7 @@ function fsu_strata_mercury_editor_theme() {
     'text',
     'hero',
     'card',
+    'video',
   ];
 
   foreach ($custom_paragraph_templates as $type) {
@@ -174,6 +175,24 @@ function template_preprocess_paragraph__card(array &$variables) {
     ];
     if (!$paragraph->field_link->isEmpty()) {
       $variables['heading']['href'] = $paragraph->field_link->first()->getUrl()->toString();
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_HOOK
+ */
+function template_preprocess_paragraph__video(array &$variables) {
+  $paragraph = $variables['paragraph'];
+  $video_url_parser = \Drupal::service('fsu_strata_mercury.video_url_parser');
+  if ($paragraph->hasField('field_link') && !$paragraph->field_link->isEmpty()) {
+    $video_url = $paragraph->field_link->first()->getUrl()->toString();
+    $variables['video_info']['id'] = $video_url_parser->getVideoId($video_url);
+    if ($video_url_parser->isYoutubeUrl($video_url)) {
+      $variables['video_info']['host'] = 'youtube';
+    }
+    elseif ($video_url_parser->isVimeoUrl($video_url)) {
+      $variables['video_info']['host'] = 'vimeo';
     }
   }
 }

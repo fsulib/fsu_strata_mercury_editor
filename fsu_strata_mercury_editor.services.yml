@@ -2,3 +2,5 @@ services:
   fsu_strata_mercury.image_path:
     class: Drupal\fsu_strata_mercury_editor\FsuStrataMercuryImagePath
     arguments: ['@entity_type.manager']
+  fsu_strata_mercury.video_url_parser:
+    class: Drupal\fsu_strata_mercury_editor\FsuStrataMercuryVideoUrl

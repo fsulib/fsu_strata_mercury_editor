@@ -10,7 +10,7 @@ id: paragraph.video.field_link
 field_name: field_link
 entity_type: paragraph
 bundle: video
-label: 'Video URL'
+label: 'YouTube Video Share URL'
 description: 'Enter video URL, typically available from clicking "Share" on the video'
 required: true
 translatable: true

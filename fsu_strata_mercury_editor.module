@@ -191,8 +191,8 @@ function template_preprocess_paragraph__video(array &$variables) {
     if ($video_url_parser->isYoutubeUrl($video_url)) {
       $variables['video_info']['host'] = 'youtube';
     }
-    elseif ($video_url_parser->isVimeoUrl($video_url)) {
-      $variables['video_info']['host'] = 'vimeo';
+    else {
+      $variables['video_info']['host'] = 'unknown';
     }
   }
 }

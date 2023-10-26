@@ -2,7 +2,6 @@ name: FSU Strata Mercury Editor
 type: module
 description: The description.
 package: Provides an Enhanced Page with Strata layouts and components.
-core: 8.x
 core_version_requirement: ^9 || ^10
 dependencies:
   - crop

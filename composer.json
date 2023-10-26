@@ -13,15 +13,8 @@
       "role": "Maintainer"
     }
   ],
-  "repositories": [
-    {
-      "name": "atendesigngroup/mercury_editor",
-      "type": "git",
-      "url": "https://bitbucket.org/atendesigngroup/mercury_editor.git"
-    }
-  ],
   "require": {
-    "atendesigngroup/mercury_editor": "^1",
+    "drupal/mercury_editor": "^2.1@alpha",
     "drupal/heading": "^1",
     "drupal/image_widget_crop": "^2",
     "drupal/layout_paragraphs": "^2",

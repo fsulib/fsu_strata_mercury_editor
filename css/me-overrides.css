@@ -143,6 +143,7 @@ form.layout-paragraphs-builder-form .js-lpb-component-list {
   .ui-dialog .form-inline .form-control {
     display: block;
     width: auto;
+    height: auto;
   }
 }
 

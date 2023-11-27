@@ -26,8 +26,6 @@
       }
   ],
   "require": {
-    "atendesigngroup/legacy_me_layouts": "dev-main",
-    "atendesigngroup/legacy_me_style_options": "dev-main",
     "drupal/mercury_editor": "^2",
     "drupal/heading": "^1",
     "drupal/image_widget_crop": "^2",

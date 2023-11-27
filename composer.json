@@ -13,18 +13,6 @@
       "role": "Maintainer"
     }
   ],
-  "repositories": [
-      {
-          "name": "legacy_me_layouts",
-          "type": "vcs",
-          "url": "https://github.com/AtenDesignGroup/legacy_me_layouts.git"
-      },  
-      {   
-          "name": "legacy_me_style_options",
-          "type": "vcs",
-          "url": "https://github.com/AtenDesignGroup/legacy_me_style_options.git"
-      }
-  ],
   "require": {
     "drupal/mercury_editor": "^2",
     "drupal/heading": "^1",

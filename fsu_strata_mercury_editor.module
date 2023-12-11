@@ -195,6 +195,14 @@ function template_preprocess_paragraph__video(array &$variables) {
       $variables['video_info']['host'] = 'unknown';
     }
   }
+  if ($paragraph->hasField('field_video_title')) {
+    if (!$paragraph->field_video_title->isEmpty()) {
+      $variables['video_info']['title'] = $paragraph->field_video_title->getString();
+    }
+    else {
+      $variables['video_info']['title'] = "YouTube Video Player";
+    }
+  }
 }
 
 /**

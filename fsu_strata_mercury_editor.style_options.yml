@@ -19,7 +19,7 @@ options:
     plugin: css_class
     label: 'Box Shadow'
     multiple: false
-    default: shadow
+    default: none
     options:
       none:
         label: None

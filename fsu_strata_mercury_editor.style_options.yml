@@ -31,17 +31,23 @@ options:
     label: Style
     default: none
     options:
-      none: None
-      arrow: Arrow
-      point: Point
-      rules: Rules
+      none:
+        label:  None
+      arrow:
+        label: Arrow
+      point:
+        label: Point
+      rules:
+        label: Rules
   card_layout:
     plugin: property
     label: Layout
     default: stacked
     options:
-      stacked: Stacked
-      inline: Inline
+      stacked:
+        label: Stacked
+      inline:
+        label: Inline
   custom_class:
     plugin: css_class
     label: Custom CSS Class
@@ -50,8 +56,10 @@ options:
     label: Image Float
     default: left
     options:
-      left: 'Float Left'
-      right: 'Float Right'
+      left:
+        label: 'Float Left'
+      right:
+        label: 'Float Right'
   color:
     plugin: css_class
     label: Color
@@ -109,37 +117,57 @@ options:
     label: Color
     multiple: false
     default: transparent
-    options:
-      transparent: Transparent
-      c: 'Canvas (C)'
-      w: 'White (W)'
-      n2w: 'Neutral +2 White (N2W)'
-      n1w: 'Neutral +1 White (N1W)'
-      n: 'Neutral (N)'
-      n2s: 'Neutral +2 Slate (N2S)'
-      s: 'Slate (S)'
-      k: 'Black (K)'
-      gt: 'Garnet (GT)'
-      gd: 'Gold (GD)'
-      gd1c: 'Gold +1 Canvas (GD1C)'
-      gd2c: 'Gold +2 Canvas (GD2C)'
-      gd3c: 'Gold +3 Canvas (GD3C)'
-      b: 'Blue (B)'
+  options:
+      transparent:
+        label: 'Transparent'
+      c:
+        label:  'Canvas (C)'
+      w:
+        label: 'White (W)'
+      n2w:
+        label: 'Neutral +2 White (N2W)'
+      n1w:
+        label: 'Neutral +1 White (N1W)'
+      n:
+        label: 'Neutral (N)'
+      n2s:
+        label: 'Neutral +2 Slate (N2S)'
+      s:
+        label: 'Slate (S)'
+      k:
+        label: 'Black (K)'
+      gt:
+        label: 'Garnet (GT)'
+      gd:
+        label: 'Gold (GD)'
+      gd1c:
+        label: 'Gold +1 Canvas (GD1C)'
+      gd2c:
+        label: 'Gold +2 Canvas (GD2C)'
+      gd3c:
+        label: 'Gold +3 Canvas (GD3C)'
+      b:
+        label: 'Blue (B)'
   hero_alignment:
     plugin: property
     label: Align
     default: left
     options:
-      left: Left
-      right: Right
+      left:
+        label: Left
+      right:
+        label: Right
   hero_style:
     plugin: property
     label: Style
     default: none
     options:
-      none: None
-      arrow: Arrow
-      point: Point
+      none:
+        label: None
+      arrow:
+        label: Arrow
+      point:
+        label: Point
   image_style:
     plugin: image_style
     label: Image Style
@@ -175,9 +203,12 @@ options:
     label: Column Ratio
     default: 1_1
     options:
-      '1_1': '1:1'
-      '1_2': '1:2'
-      '2_1': '2:1'
+      '1_1':
+        label: '1:1'
+      '1_2':
+        label: '1:2'
+      '2_1':
+        label: '2:1'
 
 contexts:
   layout:

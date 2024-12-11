@@ -117,7 +117,7 @@ options:
     label: Color
     multiple: false
     default: transparent
-  options:
+    options:
       transparent:
         label: 'Transparent'
       c:

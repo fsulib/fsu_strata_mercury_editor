@@ -30,7 +30,7 @@ class FsuStrataMercuryVideoUrl {
   public function isYoutubeUrl(string $url) {
     $url_host = $this->getUrlHost($url);
     $result = false;
-    if ($url_host == 'youtube' || $url_host == 'youtu.be') {
+    if (str_contains($url_host,'youtube') || str_contains($url_host,'youtu.be')) {
       $result = true;
     }
 
@@ -88,12 +88,11 @@ class FsuStrataMercuryVideoUrl {
 			)             # End path alternatives.
 		)               # End host alternatives.
 		([\w-]{10,12})  # Allow 10-12 for 11 char youtube id.
-		$%x';
+		%x';
     $result = preg_match($pattern, $url, $matches);
     if (false !== $result) {
       $video_id = $matches[1];
     }
-
     return  $video_id;
   }
 

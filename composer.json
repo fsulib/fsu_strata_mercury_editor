@@ -15,7 +15,7 @@
   ],
   "require": {
     "drupal/mercury_editor": "^2",
-    "drupal/heading": "^1",
+    "drupal/heading": "^2",
     "drupal/image_widget_crop": "^2",
     "drupal/layout_paragraphs": "^2",
     "drupal/style_options": "^1"
